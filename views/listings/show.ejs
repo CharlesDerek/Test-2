@@ -1,0 +1,528 @@
+<% include ../partials/header %>
+
+
+<body class="body">
+  
+          
+
+  <div class="coversection">
+    <div class="hostblock">
+      <div class="div-block-5">
+        
+        <img width="100%" href="/users/<%= listing.author %>">
+        <h5 class="heading-10"><em>Submitted by: <a href="/users/<%= listing.author.id %>"><%= listing.author.username %></a></em></h5>
+        <h5 class="heading-10"><em> <%= moment(listing.createdAt).format("MMMM Do YYYY, h:mm a"); %></em></h5>
+        
+          
+          
+        
+          <% if(currentuser && listing.author.id.equals(currentuser._id) || currentuser && currentuser.isAdmin){ %>
+          <a class="button-3 w-button" href="/listings/<%= listing._id %>/edit">Edit</a>
+          
+          <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST" class="delete-form">
+            <button class="button-3 w-button">Delete</button>
+          </form>
+          <% } %>
+          
+          
+          
+          
+          
+      </div>
+      </div>
+    <div class="covercontainer w-container">
+      <div data-duration-in="1000" data-duration-out="1000" data-easing="ease-in-out" class="tabs w-tabs">
+        <div class="tabs-menu-3 w-tab-menu">
+          <a data-w-tab="Tab 1" class="tab-link-2 w-inline-block w-tab-link">
+            <div class="text-block-8">Details</div>
+          </a>
+          <a data-w-tab="Tab 2" class="tab-link-3 w-inline-block w-tab-link">
+            <div class="text-block-9">Map</div>
+          </a>
+          <a data-w-tab="Tab 3" class="tab-link-4 w-inline-block w-tab-link">
+            <div class="text-block-10">Gallary</div>
+          </a>
+          <a data-w-tab="Tab 4" class="tab-link-5 w-inline-block w-tab-link w--current">
+            <div>All Details</div>
+          </a>
+        </div>
+        <div class="tabs-content w-tab-content">
+          <div data-w-tab="Tab 1" class="tab-pane w-tab-pane">
+            <div class="row-3 w-row">
+              <div class="w-col w-col-3">
+                <h3 class="heading-8"><%= listing.name %></h3>
+                <h4 class="heading-9">$<%= listing.cost %> a night</h4>
+              </div>
+              <div class="w-col w-col-9"></div>
+            </div>
+            <div class="infospacer">
+              <div class="row-5 w-row">
+                <div class="w-col w-col-3">
+                  <h4><em class="italic-text">Details:</em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <div>
+                    <p class="descripttext"><%= listing.description %></p>
+                    <h5 class="heading-11">The Space</h5>
+                    <p class="descripttext">Ideal Location -</p>
+                    <p class="descripttext">The Good Life is perfectly located between downtown Gatlinburg and Pigeon Forge. Less than a 10 minute drive from restaurants, shopping and all the main attractions.</p>
+                    <p class="descripttext">Newly Built in 2017 -</p>
+                    <p class="descripttext">The original Good Life cabin was a true favorite and the new Good Life is even better. Custom designed by the owner Mike, this cabin offers cathedral ceilings, large 6 foot picture windows to maximize the amazing views, hickory hardwood throughout, a spacious kitchen with oak cabinets and granite and a stone fireplace.</p>
+                    <p class="descripttext">Two King Suites -</p>
+                    <p class="descripttext">A dream cabin for either single couples, double couples, or small families, The Good Life was built with two private, closed room king suites, one upstairs and one downstairs. Both suites offer a beautiful Ski mountain view and include custom made cedar furniture, a king gel/memory mattress, LG smart HDTV, a cabinet dresser and a closet.</p>
+                    <p class="descripttext">Newly Built in 2017 -</p>
+                    <p class="descripttext">The Deck -</p>
+                    <p class="descripttext">The large covered deck faces Mt Le Conte and offers spectacular views. Sit back in the Adirondack rockers or soak in the new Viking Spa. This is one of the best seats in the house!</p>
+                    <p class="descripttext">Entertainment amenities include:</p>
+                    <p class="descripttext">**NEW...unlimited high speed &quot;indoor/outdoor&quot; Wi-Fi** (2G for outside devices &amp; 5G for high speed inside use) The living room offers a 55 in LG smart HDTV with an expanded Charter package and includes sports and movie channels.</p>
+                    <p class="descripttext">Our mattress selection -</p>
+                    <p class="descripttext">Mattress selection was one of the top priorities when rebuilding our cabin. Many guests have said they appreciate the luxury our mattress selection has to offer and we found a truly amazing mattress by M-Lily. This gel/memory foam hybrid is the perfect combination of soft and firm ensuring a wonderful night&#x27;s rest.</p>
+                    <p class="descripttext">Cool Outdoor Area!</p>
+                    <p class="descripttext">The cabin would not be complete without our one-of-a-kind grill &amp; picnic area. Follow the sculpted rock walk way down to the grill area which includes a picnic table with umbrella, park style charcoal grill and a couple&#x27;s Adirondack swing, all with a beautiful mountain view. One flip of a switch will illuminate the grill area with evening LED lights. Come enjoy this truly unique experience!</p>
+                    <p class="descripttext">The fireplace is seasonal &amp; operates during the late Fall &amp; Winter months.</p>
+                    <p class="descripttext">The Good Life shares a long drive with one cabin that sits behind The Good Life. Private parking area provided to guests.</p>
+                    <h5 class="heading-12">Guest Access</h5>
+                    <p class="descripttext">The Good Life is located less than 1/3 mile from the main connecting road (Parkway) between downtown Gatlinburg and Pigeon Forge. Our ideal location makes it easy to get to town quickly, but remote enough to enjoy beautiful mountain views &amp; a peaceful &quot;tucked away&quot; environment.</p>
+                    <p class="descripttext">Guests have access to the entire cabin &amp; outdoor area</p>
+                    <p class="descripttext">A welcome packet will be emailed 14 days prior to arrival with access instructions and the cabin code.</p>
+                    <h5 class="heading-13">Interaction with guests</h5>
+                    <p class="descripttext">Direct owner contact before and during your stay for a truly unique and &quot;stress-free&quot; vacation :)</p>
+                    <h5 class="heading-14">Other things to note</h5>
+                    <p class="descripttext">Parking area is video monitored for safety. We recommend keeping doors locked and windows up in your car while not in use.</p>
+                    <p class="descripttext">We have reserved this cabin as a pet/animal free space in order to accommodate guests with allergies and/or respiratory conditions. Special items are utilized to reduce allergens inside the cabin. For questions, feel free to contact the owner for additional information.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row-52nd w-row">
+                <div class="w-col w-col-6 w-col-small-6 w-col-tiny-tiny-stack">
+                  <h4><em class="italic-text-2">Ameneties:</em></h4>
+                  <div class="div-block-6">
+                    <div class="html-embed-3 w-embed">
+                      <div class="_iq8x9is">
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><span><strong>Kitchen</strong></span></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><strong>TV</strong></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><span><strong>Essentials</strong></span></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><strong>Shampoo</strong></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><span><strong>Heating</strong></span></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><strong>Air conditioning</strong></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><span><strong>Washer</strong></span></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><span><strong>Dryer</strong></span></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><strong>Free parking on premises</strong></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="text-muted"><del aria-hidden="true">Free parking on street</del></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="text-muted"><del aria-hidden="true">Paid parking off premises</del></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><span><strong>Wireless Internet</strong></span></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><strong>Cable TV</strong></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="text-muted"><del aria-hidden="true">Breakfast</del></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="text-muted"><del aria-hidden="true">Pets allowed</del></div>
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                          <div class="">
+                            <div class="_36rlri" style="margin-right: 16px;"><svg viewbox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 1.2em; width: 1.2em; fill: currentcolor;"></svg></div><strong>Family/kid friendly</strong></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-col w-col-6 w-col-small-6 w-col-tiny-tiny-stack">
+                  <div>
+                    <div class="html-embed w-embed">
+                      <div>
+                        <div class="_2h22gn">
+                          <div class="_iq8x9is">
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Baby bath</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Baby monitor</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Babysitter recommendations</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Bathtub</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Changing table</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Children’s books and toys</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Children’s dinnerware</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Crib</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Fireplace guards</del></div>
+                            </div>
+                          </div>
+                          <div class="_iq8x9is">
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Game console</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">High chair</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Outlet covers</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Pack ’n Play/travel crib</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Room-darkening shades</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Stair gates</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Table corner guards</del></div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                              <div class="text-muted"><del aria-hidden="true">Window guards</del></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 2" class="tab-pane-2 w-tab-pane">
+            <div class="infospacer">
+              <div class="row-5 w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>Location:</em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <div>
+                    <p class="descripttext"><%= listing.location %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-row">
+                <div class="w-col w-col-3">
+                  <h4>Location Details:</h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <div>
+                    <p class="descripttext">Cancel up to 5 days before check in and get a full refund (minus service fees). Cancel within 5 days of your trip and the first night is non-refundable, but 50% of the cost for the remaining nights will be refunded. Service fees are refunded when cancellation happens before check in and within 48 hours of booking.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>Safety Features:</em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <ul class="hrules">
+                    <li>
+                      <div>Smoke Detector</div>
+                    </li>
+                    <li>Carbon Monoxide Detector</li>
+                    <li>
+                      <div>First Aid</div>
+                    </li>
+                    <li>
+                      <div>Safety Card</div>
+                    </li>
+                    <li>
+                      <div>Fire Extinguisher</div>
+                    </li>
+                    <li>
+                      <div>Emergency Satellite Phone ($15 fee for call if used)</div>
+                    </li>
+                  </ul>
+                  <div data-delay="0" class="w-dropdown">
+                    <div class="w-dropdown-toggle">
+                      <div class="w-icon-dropdown-toggle"></div>
+                      <div>See all rules</div>
+                    </div>
+                    <nav class="w-dropdown-list"><a href="#" class="w-dropdown-link">Link 1</a><a href="#" class="w-dropdown-link">Link 2</a><a href="#" class="w-dropdown-link">Link 3</a></nav>
+                  </div>
+                </div>
+              </div>
+              <div class="w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>Availability:</em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <div class="w-clearfix">
+                    <p class="descripttext">Minimum 2 night stay requirement.</p><a href="#" class="lightbox-link-2 w-inline-block w-lightbox"><img src="images/viewCalendarButton-300x1121.png" width="140" class="image-14">
+
+    
+</a></div></div></div></div>
+            <div class="w-widget w-widget-map"></div>
+          </div>
+          <div data-w-tab="Tab 3" class="tab-pane-3 w-tab-pane">
+            <div class="row-3 w-row">
+              <div class="w-col w-col-3">
+                <h3 class="heading-8"><%= listing.name %></h3>
+              </div>
+              <div class="column w-col w-col-9"><a href="#" class="w-inline-block w-lightbox"><img src="<%= listing.image %>" width="761" srcset="<%= listing.image %>, https://daks2k3a4ib2z.cloudfront.net/5a286b9b3ee7750001536254/5a299bb15a5d3f0001b96702_9-enormous-log-cabins-that-have-all-the-luxuries-of-a-modern-mansion%5B1%5D.jpg 800w, images/9-enormous-log-cabins-that-have-all-the-luxuries-of-a-modern-mansion1.jpg 1024w" sizes="(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 77vw, 761px" class="image-13"><script type="application/json" class="w-json">{
+  "items": [
+    {
+      "type": "image",
+      "_id": "5a29b1aa55a4f10001d56446",
+      "fileName": "ebd8c634-013e-473b-9d70-76beef07f613[1].jpg",
+      "origFileName": "ebd8c634-013e-473b-9d70-76beef07f613[1].jpg",
+      "width": 1440,
+      "height": 960,
+      "fileSize": 231269,
+      "url": "<%= listing.image %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a29b19a372cc000010cd53e",
+      "fileName": "4bf506de_original[1].jpg",
+      "origFileName": "4bf506de_original[1].jpg",
+      "width": 1024,
+      "height": 683,
+      "fileSize": 111022,
+      "url": "<%= listing.imagetwo %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a29b10365926200011dd83e",
+      "fileName": "f2535ba8-20f7-44db-8d16-5a7ad36d9e5b[1].jpg",
+      "origFileName": "f2535ba8-20f7-44db-8d16-5a7ad36d9e5b[1].jpg",
+      "width": 1023,
+      "height": 683,
+      "fileSize": 98087,
+      "url": "<%= listing.imagethree %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a299bb15a5d3f0001b96702",
+      "fileName": "9-enormous-log-cabins-that-have-all-the-luxuries-of-a-modern-mansion[1].jpg",
+      "origFileName": "9-enormous-log-cabins-that-have-all-the-luxuries-of-a-modern-mansion[1].jpg",
+      "width": 1024,
+      "height": 768,
+      "fileSize": 291849,
+      "url": "<%= listing.imagefour %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a29b1cd45c7240001ab1a9c",
+      "fileName": "3de90b0c-18f9-44b3-bfd7-c1483976336f[1].jpg",
+      "origFileName": "3de90b0c-18f9-44b3-bfd7-c1483976336f[1].jpg",
+      "width": 1023,
+      "height": 683,
+      "fileSize": 198660,
+      "url": "<%= listing.imagefive %>"
+    }
+  ]
+}</script></a></div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 4" class="tab-pane-4 w-tab-pane w--tab-active">
+            <div class="reviews">
+              <div></div>
+            </div>
+            <div>
+              <div class="row-3 w-row">
+                <div class="w-col w-col-3">
+                  <h3 class="heading-8"><%= listing.name %></h3>
+                </div>
+                <div class="w-col w-col-9"><a href="#" class="w-inline-block w-lightbox"><img src="<%= listing.image %>"  class="image-13"><script type="application/json" class="w-json">{
+  "items": [
+    {
+      "type": "image",
+      "_id": "5a29b1aa55a4f10001d56446",
+      "fileName": "ebd8c634-013e-473b-9d70-76beef07f613[1].jpg",
+      "origFileName": "ebd8c634-013e-473b-9d70-76beef07f613[1].jpg",
+      "width": 1440,
+      "height": 960,
+      "fileSize": 231269,
+      "url": "<%= listing.image %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a29b19a372cc000010cd53e",
+      "fileName": "4bf506de_original[1].jpg",
+      "origFileName": "4bf506de_original[1].jpg",
+      "width": 1024,
+      "height": 683,
+      "fileSize": 111022,
+      "url": "<%= listing.imagetwo %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a29b10365926200011dd83e",
+      "fileName": "f2535ba8-20f7-44db-8d16-5a7ad36d9e5b[1].jpg",
+      "origFileName": "f2535ba8-20f7-44db-8d16-5a7ad36d9e5b[1].jpg",
+      "width": 1023,
+      "height": 683,
+      "fileSize": 98087,
+      "url": "<%= listing.imagethree %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a299bb15a5d3f0001b96702",
+      "fileName": "9-enormous-log-cabins-that-have-all-the-luxuries-of-a-modern-mansion[1].jpg",
+      "origFileName": "9-enormous-log-cabins-that-have-all-the-luxuries-of-a-modern-mansion[1].jpg",
+      "width": 1024,
+      "height": 768,
+      "fileSize": 291849,
+      "url": "<%= listing.imagefour %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a29b1cd45c7240001ab1a9c",
+      "fileName": "3de90b0c-18f9-44b3-bfd7-c1483976336f[1].jpg",
+      "origFileName": "3de90b0c-18f9-44b3-bfd7-c1483976336f[1].jpg",
+      "width": 1023,
+      "height": 683,
+      "fileSize": 198660,
+      "url": "<%= listing.imagefive %>"
+    }
+  ]
+}</script>
+                </a>
+                  <div class="text-block-11"><em>Click Image to see all photos</em></div>
+                </div>
+              </div>
+            </div>
+            <div class="row-4 w-row">
+              <div class="w-col w-col-3">
+                <h4 class="heading-9">118 Reviews</h4>
+              </div>
+              <div class="w-col w-col-9"></div>
+            </div>
+            <div class="infospacer">
+              <div class="row-5 w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>Description:</em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <div>
+                    <p class="descripttext"><%= listing.description %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>House Rules:</em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <ul class="hrules">
+                    <li>
+                      <div>No Smoking</div>
+                    </li>
+                    <li>No parties or events</li>
+                    <li>
+                      <div>Check out by 11AM</div>
+                    </li>
+                    <li>
+                      <div>Check-in is anytime after 4PM</div>
+                    </li>
+                    <li>
+                      <div>Not safe or suitable for children (2-12 years)</div>
+                    </li>
+                    <li>
+                      <div>Self check-in with lockbox</div>
+                    </li>
+                  </ul>
+                  <div data-delay="0" class="w-dropdown">
+                    <div class="w-dropdown-toggle">
+                      <div class="w-icon-dropdown-toggle"></div>
+                      <div>See all rules</div>
+                    </div>
+                    <nav class="w-dropdown-list"><a href="#" class="w-dropdown-link">Link 1</a><a href="#" class="w-dropdown-link">Link 2</a><a href="#" class="w-dropdown-link">Link 3</a></nav>
+                  </div>
+                </div>
+              </div>
+              <div class="w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>Cancellations: <br><%= listing.strictness %></em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <div>
+                    <p class="descripttext">Cancel up to 5 days before check in and get a full refund (minus service fees). Cancel within 5 days of your trip and the first night is non-refundable, but 50% of the cost for the remaining nights will be refunded. Service fees are refunded when cancellation happens before check in and within 48 hours of booking.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>Safety Features:</em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <ul class="hrules">
+                    <li>
+                      <div>Smoke Detector</div>
+                    </li>
+                    <li>Carbon Monoxide Detector</li>
+                    <li>
+                      <div>First Aid</div>
+                    </li>
+                    <li>
+                      <div>Safety Card</div>
+                    </li>
+                    <li>
+                      <div>Fire Extinguisher</div>
+                    </li>
+                    <li>
+                      <div>Emergency Satellite Phone ($15 fee for call if used)</div>
+                    </li>
+                  </ul>
+                  <div data-delay="0" class="w-dropdown">
+                    <div class="w-dropdown-toggle">
+                      <div class="w-icon-dropdown-toggle"></div>
+                      <div>See all rules</div>
+                    </div>
+                    <nav class="w-dropdown-list"><a href="#" class="w-dropdown-link">Link 1</a><a href="#" class="w-dropdown-link">Link 2</a><a href="#" class="w-dropdown-link">Link 3</a></nav>
+                  </div>
+                </div>
+              </div>
+              <div class="w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>Availability:</em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <div class="w-clearfix">
+                    <p class="descripttext">Minimum 2 night stay requirement.</p><a href="#" class="lightbox-link-2 w-inline-block w-lightbox"><img src="images/viewCalendarButton-300x1121.png" width="140" class="image-14">
+
+<% include ../partials/footer %>

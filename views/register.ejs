@@ -1,0 +1,106 @@
+<% include ./partials/header %>
+      <div class="container">
+        <div class="jumbotron">
+                <div class="container">
+                    <h1>Welcome Fellow Explorer!</h1>
+                    <img class="landImg" src="https://i.ytimg.com/vi/l9m4cW2yxy0/maxresdefault.jpg">
+                    <p>Check out some breath taking adventures! Share some of your own experiences on your own profile, While planning your next getaway!</p>
+                </div>
+        </div>
+    </div>
+    
+    
+<div class="container">
+    <div>
+        <h1 class="h1main">Sign Up</h1>
+    </div>
+    <div class="row">
+        <div class="submitform">
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <label for="username">username</label>
+                    <input class="form-control" type="text" name="username" placeholder="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" name="password" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input class="form-control" type="text" name="firstName" placeholder="first name">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input class="form-control" type="text" name="lastName" placeholder="last name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="email" placeholder="email">
+                </div>
+                <div class="form-group">
+                    <label for="avatar">Profile Image Avatar</label>
+                    <input class="form-control" type="text" name="avatar" placeholder="https://i.pinimg.com/cottages.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="avatartwo">Profile Image 2 (optional)</label>
+                    <input class="form-control" type="text" name="avatartwo" placeholder="https://i.pinimg.com/cottages.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="avatarthree">Profile Image 3 (optional)</label>
+                    <input class="form-control" type="text" name="avatarthree" placeholder="https://i.pinimg.com/cottages.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="avatarfour">Profile Image 4 (optional)</label>
+                    <input class="form-control" type="text" name="avatarfour" placeholder="https://i.pinimg.com/cottages.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="avatarfive">Profile Image 5 (optional)</label>
+                    <input class="form-control" type="text" name="avatarfive" placeholder="https://i.pinimg.com/cottages.jpg">
+                </div>
+                <script>
+                var counter = 1;
+var counter = 1;
+var limit = 9;
+function addInput(divName){
+     if (counter == limit)  {
+          return null;
+     }
+     else {
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<label for='sfeatures'>Safety Feature " + (counter + 1) + ":</label>  <br><input type='text' class='form-control' name='myInputs[]'>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+     }
+}
+                </script>
+                
+     <div id="dynamicInput">
+                    <label for="sfeatures">Saftey Features (9 limit)</label>
+			        <input type='text' class='form-control' name='myInputs[]'>
+     </div>
+                <button style="margin-top: 2%;" value="Add another text input" type="button" class="btn btn-xs btn-success" onclick="addInput('dynamicInput');">Add another text input</button>
+                
+                <div class="form-group">
+                    <label for="bio">Bio</label>
+			        <textarea class="form-control" type="bio" name="bio" rows="5" placeholder="Write a short description of yourself and what you enjoy about Traveling."></textarea>
+		        </div>
+		        <div class="form-group">
+                    <input class="form-control" type="text" name="adminCode" placeholder="admin code">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-danger btn-block">Sign Up!</button>
+                </div>
+            </form>
+            <form action="/login" method="GET">
+                <div>
+                        <button class="btn btn-lg btn-primary btn-block"  href="/login">Already Member!</button>
+                </div>
+            </form>
+            <div>
+                <button style="margin-top: 2%;" class="btn btn-xs btn-success" onclick="goBack()">Go Back</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<% include ./partials/footer %>

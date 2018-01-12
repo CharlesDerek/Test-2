@@ -1,0 +1,31 @@
+<% include ../partials/header %> 
+
+
+<body class="body">
+  <div class="coversection">
+    <div class="covercontainer w-container">
+      <h1 data-ix="cover-title-appear" class="cover-title w-hidden-tiny">ExotiVentures</h1>
+      <h1 data-ix="cover-title-appear" class="cover-title w-hidden-main w-hidden-medium w-hidden-small">ExotiVentures</h1>
+      <h1 data-ix="mrgi-usa-float" class="mrgi">From MRGI USA</h1>
+      <div data-ix="cover-subtitle-appear" class="cover-subtitle">View some of Americas Greatest Out Door Adventures. Including Properties for rental, local adventure packages, &amp; Local deals.</div>
+      <div data-ix="cover-cta-appear" class="cover-cta"><a href="/listings/new" class="button-cta w-button">Post a Property</a> 
+      <div id="listing-grid">
+          <% listings.forEach(function(listing){ %>
+        <div class="w-row">
+          <div class="w-col w-col-3 w-col-medium-6 w-col-small-6">
+              
+        
+              <h3 class="heading-7 ellipsis"><%= listing.name %></h3><a href="/listings/<%= listing._id %>" class="w-inline-block"><img class="myImgFix" src="<%= listing.image %>"></a><h6>At $<%= listing.cost %> / Night</h6><a href="/listings/<%= listing._id %>" class="button-3 w-button">More Info</a>
+              
+               
+              </div>
+          
+           <% }); %>
+          
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% include ../partials/footer %>

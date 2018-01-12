@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<!-- Meta Tags for Bootstrap 4 -->
+  <meta charset="utf-8">
+  <title>ExotiVentures</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.bergfex.com/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap 4 CSS -->
+
+  <!--
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+  -->
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+        <title></title>
+    </head>
+    <body>
+  <div data-collapse="medium" data-animation="over-right" data-duration="1000" data-no-scroll="1" data-ix="navbar-appear" class="navbar w-nav">
+    <div class="wide-container">
+      <div data-ix="hamburgertoggle" class="menu-button w-nav-button">
+        <div class="navbardiv1"></div>
+        <div class="navbardiv2"></div>
+        <div class="navbardiv3"></div>
+      </div>
+    </div>
+    <div class="container w-container"><a href="index.html" class="w-nav-brand"><img src="http://uploads.webflow.com/5a04b009b12683000102a365/5a04b009b12683000102a37b_LocationTech_Logo%5B1%5D.png" data-ix="icon-on-load" class="image-2"></a>
+      <div class="navbar-subtitle">Bringing technology to life</div>
+      <nav role="navigation" class="nav-menu w-nav-menu"><a href="/listings" class="nav-link toplinkhamburger w-nav-link"><strong class="bold-text navbartextinhamhighlighted active-link-navbar">Home</strong></a>
+        <div data-hover="1" data-delay="0" class="w-dropdown">
+          <div class="w-dropdown-toggle">
+            <div class="w-icon-dropdown-toggle"></div>
+            <div class="navbartextinham"><strong>user</strong></div>
+          </div>
+          <nav class="dropdown-list w-dropdown-list">
+            
+              <% if(!currentuser){ %>
+            <a href="/login" class="dropdown-link w-dropdown-link"><strong>Login</strong></a>
+            <a href="/register" class="dropdown-link w-dropdown-link"><strong>Sign Up</strong></a>
+            <% } else { %>
+            
+            <a href="/users/<%= currentuser.id %>" class="w-dropdown-link"><strong>Profile</strong></a>
+            <a href="/logout" class="w-dropdown-link"><strong>Logout</strong></a>
+            <a href="/listings/new" class="w-dropdown-link"><strong>Rent my Property</strong></a>
+            
+              <% } %>
+            
+            </nav>
+        </div><a href="/applications" class="nav-link w-nav-link"><strong class="navbartextinham">applications</strong></a><a href="/connect" class="nav-link getquotelink w-nav-link"><strong>Get In Touch</strong></a></nav>
+    </div>
+  </div>
+  
+  <!--<div data-ix="hide-on-load" class="floating-nav">-->
+  <!--  <div class="nav-container w-clearfix"><a href="#" class="navbar-logo w-inline-block w-clearfix"><img src="images/LocationTech_Logo1.png" width="57" data-ix="floating-nav-logo-hover-flip" class="navbar-logo floating"></a>-->
+  <!--    <div class="floatingnavfixedtext">Bringing Technology to Life</div>-->
+  <!--  </div>-->
+  <!--</div>-->
+
+    
+    
+<!--  Last Published: Fri Dec 08 2017 18:59:14 GMT+0000 (UTC)  -->
+<html data-wf-page="5a29c9d72fc5c30001264fd3" data-wf-site="5a286b9b3ee7750001536254">
+  
+  <meta charset="utf-8">
+  <title>My Profile</title>
+  <meta content="profile" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="/stylesheets/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/components.css" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/exoproto.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      WebFont.load({
+        google: {
+          families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Varela:400", "Changa One:400,400italic", "Bitter:400,700,400italic", "Merriweather:300,300italic,400,400italic,700,700italic,900,900italic"]
+        }
+      });
+    </script>
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <script type="text/javascript">
+      ! function(o, c) {
+        var n = c.documentElement,
+          t = " w-mod-";
+        n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+      }(window, document);
+    </script>
+    
+        <div class="container">
+        
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger","alertFix" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success","alertFix" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+    
+</head>

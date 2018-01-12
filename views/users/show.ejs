@@ -1,0 +1,225 @@
+<% include ../partials/header %>
+
+
+
+  <div class="coversection">
+    <div class="hostblock">
+      
+      
+      
+    	
+		<% if(currentuser && currentuser.equals(user._id) || currentuser && currentuser.isAdmin){ %>
+          <a class="h1main buttonFix btn btn-warning" href="/<%= user._id %>/edit">Edit profile (coming soon)!</a>
+          <form action="/user/<%= user._id %>/edit?_method=POST" method="POST">
+          </form>
+          <% } %>
+          
+                
+      Below will be the new image listing for user 
+      <div class="column w-col w-col-9"></div>
+      
+      above will be the new image array for user 
+          
+      <div class="div-block-5-profile"><a href="#" class="w-inline-block w-lightbox"><img src="<%= user.avatar %>" width="33%" srcset="<%= user.avatar %>, <%= user.avatar %> 1024w" sizes="(max-width: 479px) 92vw, (max-width: 767px) 94vw, (max-width: 991px) 77vw, 761px" class="image-13"><script type="application/json" class="w-json">{
+  "items": [
+    {
+      "type": "image",
+      "_id": "5a29b1aa55a4f10001d56446",
+      "fileName": "ebd8c634-013e-473b-9d70-76beef07f613[1].jpg",
+      "origFileName": "ebd8c634-013e-473b-9d70-76beef07f613[1].jpg",
+      "width": 1440,
+      "height": 960,
+      "fileSize": 231269,
+      "url": "<%= user.avatar %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a29b19a372cc000010cd53e",
+      "fileName": "4bf506de_original[1].jpg",
+      "origFileName": "4bf506de_original[1].jpg",
+      "width": 1024,
+      "height": 683,
+      "fileSize": 111022,
+      "url": "<%= user.avatartwo %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a29b10365926200011dd83e",
+      "fileName": "f2535ba8-20f7-44db-8d16-5a7ad36d9e5b[1].jpg",
+      "origFileName": "f2535ba8-20f7-44db-8d16-5a7ad36d9e5b[1].jpg",
+      "width": 1023,
+      "height": 683,
+      "fileSize": 98087,
+      "url": "<%= user.avatarthree %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a299bb15a5d3f0001b96702",
+      "fileName": "9-enormous-log-cabins-that-have-all-the-luxuries-of-a-modern-mansion[1].jpg",
+      "origFileName": "9-enormous-log-cabins-that-have-all-the-luxuries-of-a-modern-mansion[1].jpg",
+      "width": 1024,
+      "height": 768,
+      "fileSize": 291849,
+      "url": "<%= user.avatarfour %>"
+    },
+    {
+      "type": "image",
+      "_id": "5a29b1cd45c7240001ab1a9c",
+      "fileName": "3de90b0c-18f9-44b3-bfd7-c1483976336f[1].jpg",
+      "origFileName": "3de90b0c-18f9-44b3-bfd7-c1483976336f[1].jpg",
+      "width": 1023,
+      "height": 683,
+      "fileSize": 198660,
+      "url": "<%= user.avatarfive %>"
+    }
+  ]
+}</script></a></div>
+      
+      
+      
+
+      
+      <div class="div-block-5">
+        <h1 class="heading-10"><%= user.firstName + " " + user.lastName %></h1>
+      </div>
+    </div>
+    <div class="covercontainer w-container">
+      <div data-duration-in="1000" data-duration-out="1000" data-easing="ease-in-out" class="tabs-user w-tabs">
+        <div class="tabs-menu-3 w-tab-menu">
+          <a data-w-tab="Tab 1" class="tab-link-2-user w-inline-block w-tab-link">
+            <div class="text-block-8">Message</div>
+          </a>
+          <a data-w-tab="Tab 3" class="tab-link-4-user w-inline-block w-tab-link w--current">
+            <div class="text-block-10">Properties</div>
+          </a>
+          <a data-w-tab="Tab 4" class="tab-link-5-user w-inline-block w-tab-link">
+            <div>About</div>
+          </a>
+        </div>
+        <div class="tabs-content w-tab-content">
+          <div data-w-tab="Tab 1" class="tab-pane w-tab-pane">
+            <div class="form-block-2 w-form">
+              <form id="email-form" name="email-form" data-name="Email Form" class="form">
+                <h1 class="formnewrequest">Message <%= user.firstName + " Below:" %></h1><select id="Budget" name="Budget" data-name="Budget" required="" class="subject w-select"><option value="">Please choose a subject</option><option value="Property Location">Property Location</option><option value="Amenities">Amenities </option><option value="Things to do">Things to do</option><option value="Additional Guest">Additional Guest</option><option value="Other">Other</option></select><label for="field" class="field-label-10">Hello leave me a message below!</label><textarea id="field-4" name="field-4" maxlength="5000" required="" placeholder="Greetings! I wanted to ask you about your Tennessee log cabins amenities.." class="text-field talkbox w-input"></textarea><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button formsubmit w-button">
+                <div class="div-block-4"></div>
+              </form>
+              <div class="w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 3" class="tab-pane-3 w-tab-pane w--tab-active">
+            <div class="propertiesuser">
+              <div data-ix="cover-cta-appear" class="cover-cta">
+                <div class="w-row">
+                		<h1 class="formnewrequest"><%= user.firstName + "'s" + " properties" %></h1>
+                		
+      <div id="listing-grid">
+          <% listings.forEach(function(listing){ %>
+        <div class="w-row">
+          <div class="w-col w-col-3 w-col-medium-6 w-col-small-6">
+              
+        
+              <h3 class="heading-7 ellipsis"><%= listing.name %></h3><a href="/listings/<%= listing._id %>" class="w-inline-block"><img class="myImgFix" src="<%= listing.image %>"></a><h6>At $<%= listing.cost %> / Night</h6><a href="/listings/<%= listing._id %>" class="button-3 w-button">More Info</a>
+              
+               
+              </div>
+          
+           <% }); %>
+          
+        </div>
+        </div>
+           
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-w-tab="Tab 4" class="tab-pane-4 w-tab-pane">
+            <div class="reviews">
+              <div></div>
+            </div>
+            <div>
+              <div class="row-3 w-row">
+                <div class="w-col w-col-3">
+                  <h3 class="heading-8">About <%= user.firstName %></h3>
+                </div>
+                <div class="w-col w-col-9"><a href="#" class="w-inline-block w-lightbox"><img src="images/730e78ce97ead35801b5fa1c0ef8ec09--freaking-hilarious-so-funny1.jpg" width="761" class="image-13-userabout"><script type="application/json" class="w-json">{
+  "items": [
+    {
+      "type": "image",
+      "_id": "5a29b1aa55a4f10001d56446",
+      "fileName": "ebd8c634-013e-473b-9d70-76beef07f613[1].jpg",
+      "origFileName": "ebd8c634-013e-473b-9d70-76beef07f613[1].jpg",
+      "width": 1440,
+      "height": 960,
+      "fileSize": 231269,
+      "url": "images/ebd8c634-013e-473b-9d70-76beef07f6131.jpg"
+    },
+    {
+      "type": "image",
+      "_id": "5a29b19a372cc000010cd53e",
+      "fileName": "4bf506de_original[1].jpg",
+      "origFileName": "4bf506de_original[1].jpg",
+      "width": 1024,
+      "height": 683,
+      "fileSize": 111022,
+      "url": "images/4bf506de_original1.jpg"
+    }
+  ]
+}</script></a>
+                  <div class="text-block-11"><em>Click Image to see all photos</em></div>
+                </div>
+              </div>
+            </div>
+            <div class="row-4 w-row">
+              <div class="w-col w-col-3">
+                <h4 class="heading-9">118 Reviews on his properties</h4>
+              </div>
+              <div class="w-col w-col-9"><img src="images/5-stars1.png" width="151"></div>
+            </div>
+            <div class="infospacer">
+              <div class="row-5 w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>Location</em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <div class="descripttextdiv">
+                    <p class="descripttext">Nashville, Tennessee, United States</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row-5 w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>Joined </em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <div>
+                    <h5 class="heading-10"><em><%= moment(user.createdAt).format("MMMM Do YYYY"); %></em></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="w-row">
+                <div class="w-col w-col-3">
+                  <h4><em>About: <br><%= user.firstName %></em></h4>
+                </div>
+                <div class="w-col w-col-9">
+                  <div>
+                    <p class="descripttext"><%= user.bio %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Section-3" class="example bluebackground"></div>
+
+<!--BELOW IS THE GOOGLE DROPDOWN HTML-->
+
+<!--Fake google Header-->
+<% include ../partials/footer %>

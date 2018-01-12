@@ -1,0 +1,66 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+    
+    <h1 class="h1main">Edit <%= listing.name %></h1>
+    
+    <div class="row">
+            <form class="submitform" action="/listings/<%=listing._id%>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" name="name" id="name" value="<%= listing.name %>">
+                </div>
+                <div class="form-group">
+                    <label for="image">Image Url</label>
+                    <input class="form-control" type="text" name="image" id="image" value="<%= listing.image %>">
+                </div>
+                <div class="form-group">
+                    <label for="imagetwo">Second Image (optional)</label>
+                    <input class="form-control" type="text" name="imagetwo" id="imagetwo" value="<%= listing.imagetwo %>">
+                </div>
+                <div class="form-group">
+                    <label for="imagethree">Third Image (optional)</label>
+                    <input class="form-control" type="text" name="imagethree" id="imagethree" value="<%= listing.imagethree %>">
+                </div>
+                <div class="form-group">
+                    <label for="imagefour">Fourth Image (optional)</label>
+                    <input class="form-control" type="text" name="imagefour" id="imagefour" value="<%= listing.imagefour %>">
+                </div>
+                <div class="form-group">
+                    <label for="imagefive">Fifth Image (optional)</label>
+                    <input class="form-control" type="text" name="imagefive" id="imagefive" value="<%= listing.imagefive %>">
+                </div>
+                <div class="form-group">
+                    <label for="cost">Cost</label>
+                    <input class="form-control" type="number" name="cost" id="cost" value="<%= listing.cost %>" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input class="form-control" type="text" name="location" id="location" value="<%= listing.location %>">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input class="form-control" type="text" name="description" id="description" value="<%= listing.description %>">
+                </div>
+                <div class="form-group">
+                    <label for="strictness">Cancellation Strictness Level</label>
+                    <select class="form-control" type="text" name="strictness"  id="strictness" value="<%= listing.strictness %>">
+                          <option value="Flexible">Flexible</option>
+                          <option value="Moderate">Moderate</option>
+                          <option value="Strict (With grace period)">Strict (With grace period)</option>
+                          <option value="Very Strict">Very Strict</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Update!</button>
+                </div>
+            <div>
+                <button style="margin-top: 2%;" class="btn btn-xs btn-success" onclick="goBack()">Go Back</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    
+</div>
+<% include ../partials/footer %>
